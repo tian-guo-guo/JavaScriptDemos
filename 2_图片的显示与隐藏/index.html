@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+</head>
+
+<body>
+    <button id="btn">隐藏</button>
+    <br>
+
+    <img src="../images/image01.png" id="new">
+    <script>
+        // 1.获取事件源
+        var obtn = document.getElementById('btn');
+        var newImg = document.getElementsByTagName('img')[0];
+        // var isShow = true;
+        // 2.绑定事件
+        obtn.onclick = function () {
+            // 3.事件驱动程序
+            if (obtn.innerHTML === '隐藏') {
+                newImg.style.display = 'none';
+                obtn.innerHTML = '显示';
+                // isShow = false;
+            } else {
+                newImg.style.display = 'block';
+                obtn.innerHTML = '隐藏';
+                // isShow = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

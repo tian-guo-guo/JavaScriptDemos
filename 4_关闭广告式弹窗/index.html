@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭小广告</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #qe_code {
+            width: 210px;
+            height: 200px;
+            position: relative;
+            margin: 160px auto;
+        }
+
+        #qe_code img {
+            position: absolute;
+            right: 0;
+        }
+
+        #qe_code #close {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            cursor: pointer;
+            color: #666666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="qe_code">
+        <img src="../images/image01.png" id="code">
+        <span id="close">X</span>
+    </div>
+    <script>
+        var closeSpan = document.getElementById('close');
+        var qe_code = document.getElementById('qe_code');
+        closeSpan.onclick = function () {
+            qe_code.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>衣服相册</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            margin-top: 20px;
+            border: 2px solid #ffffff;
+        }
+
+        ul li.active {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../images/image01.png" id="bigImg">
+
+    <ul>
+        <li class="active">
+            <a href="">
+                <img src="../images/image01.png" width="46" class="smallImg">
+            </a>
+        </li>
+
+        <li>
+            <a href="">
+                <img src="../images/image02.png" width="46" class="smallImg">
+            </a>
+        </li>
+
+        <li>
+            <a href="">
+                <img src="../images/image03.png" width="46" class="smallImg">
+            </a>
+        </li>
+
+        <li>
+            <a href="">
+                <img src="../images/image04.png" width="46" class="smallImg">
+            </a>
+        </li>
+    </ul>
+    <script>
+        // 1.获取事件源
+        var bigImg = document.getElementById('bigImg');
+        var smallImgs = document.getElementsByClassName('smallImg');
+
+        for (var i = 0; i < smallImgs.length; i++) {
+            // 遍历集合，给每个img标签添加事件
+            smallImgs[i].onmouseover = function () {
+
+                // 在悬浮的每个li标签类名置为空
+                for (var j = 0; j < smallImgs.length; j++) {
+                    smallImgs[j].parentNode.parentNode.setAttribute('class', '');
+                }
+
+                // 修改大图src属性
+                var smallImgSrc = this.getAttribute('src');
+                bigImg.setAttribute('src', smallImgSrc);
+
+                // 给鼠标悬浮的img标签中的父标签添加类
+                this.parentNode.parentNode.setAttribute('class', 'active');
+            }
+        }
+    </script>
+</body>
+
+</html>

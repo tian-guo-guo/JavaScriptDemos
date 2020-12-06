@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+</head>
+
+<body>
+    <img src="images/floor01.png" id="flower" width="200" height="200">
+    <br>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+
+    <script>
+        // 1.获取事件源 需要的标签
+        var flower = document.getElementById('flower');
+        var nextBtn = document.getElementById('next');
+        var prevBtn = document.getElementById('prev');
+
+        var minIndex = 1, maxIndex = 4;
+        var currentIndex = minIndex;
+        // 2.监听按钮的点击
+        nextBtn.onclick = function () {
+            if (currentIndex === maxIndex) {
+                currentIndex = minIndex;
+            } else {
+                currentIndex++;
+            }
+            flower.setAttribute('src', `images/floor0${currentIndex}.png`);
+        }
+        prevBtn.onclick = function () {
+            if (currentIndex === minIndex) {
+                currentIndex = maxIndex;
+            } else {
+                currentIndex--;
+            }
+            flower.setAttribute('src', `images/floor0${currentIndex}.png`);
+        }
+    </script>
+</body>
+
+</html>

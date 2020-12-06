@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关闭小广告</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            border: 1px solid #cccccc;
+            width: 1000px;
+            height: 50px;
+            padding-top: 450px;
+            background: url('../images/image01.png') no-repeat;
+        }
+
+        #box ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li id="item1">
+                <img src="../images/image01.png">
+            </li>
+            <li id="item2">
+                <img src="../images/image02.png">
+            </li>
+            <li id="item3">
+                <img src="../images/image03.png">
+            </li id="item4">
+            <li>
+                <img src="../images/image04.png">
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 1.获取事件源
+        function $(id) {
+            return typeof id === 'string' ? document.getElementById(id) : null;
+        }
+        // 改变背景图
+        function changebgcImg(liId, imgSrc) {
+            // 2.添加事件
+            $(liId).onmouseover = function () {
+                // 3.改变背景图
+                $('box').style.background = imgSrc;
+            }
+        }
+        changebgcImg('item1', "url('../images/image01.png') no-repeat");
+        changebgcImg('item2', "url('../images/image02.png') no-repeat");
+        changebgcImg('item3', "url('../images/image03.png') no-repeat");
+        changebgcImg('item4', "url('../images/image04.png') no-repeat");
+    </script>
+
+</body>
+
+</html>

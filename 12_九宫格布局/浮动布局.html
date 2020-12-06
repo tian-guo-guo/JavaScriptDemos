@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九宫格布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrap {
+            overflow: hidden;
+        }
+
+        #wrap .item {
+            width: 248px;
+            height: 360px;
+            font-size: 13px;
+        }
+
+        #wrap .item .title {
+            width: 248px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .imgContainer {
+            width: 248px;
+            display: table-cell;
+            text-align: center;
+        }
+
+        #wrap .item .price {
+            color: #ff6700;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cols">
+        <button>3列</button>
+        <button>4列</button>
+        <button>5列</button>
+    </div>
+    <div id="wrap">
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+        <div class="item">
+            <div class="imgContainer">
+                <img src="../images/image01.png" alt="">
+            </div>
+            <p class="title">纯色短袖女秋季T恤韩版新款服装</p>
+            <p class="price">￥69</p>
+        </div>
+    </div>
+
+    <script>
+        // 1.获取标签
+        var btns = document.getElementsByTagName('button');
+        var items = document.getElementsByClassName('item');
+        // 2.监听按钮的点击
+        btns[0].onclick = function () {
+            // 3.循环
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.float = 'left';
+                items[i].parentNode.style.width = (3 * items[i].offsetWidth) + 'px';
+            }
+        }
+
+        btns[1].onclick = function () {
+            // 3.循环
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.float = 'left';
+                items[i].parentNode.style.width = (4 * items[i].offsetWidth) + 'px';
+            }
+        }
+
+        btns[2].onclick = function () {
+            // 3.循环
+            flex(5);
+        }
+
+        function flex(colsNum) {
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.float = 'left';
+                items[i].parentNode.style.width = (colsNum * items[i].offsetWidth) + 'px';
+            }
+        }
+    </script>
+</body>
+
+</html>
